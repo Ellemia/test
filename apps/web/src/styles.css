@@ -1,0 +1,266 @@
+:root {
+  --bg: #0b0d12;
+  --surface: #12151c;
+  --card: #171b24;
+  --border: #262b36;
+  --text: #e6e8ec;
+  --muted: #8b909c;
+  --accent: #5b8cff;
+  --accent-dim: rgba(91, 140, 255, 0.14);
+  --danger: #ff6b6b;
+  --danger-dim: rgba(255, 107, 107, 0.12);
+  --green: #4ade80;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'SF Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+  font-size: 14px;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 20px 80px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.hero h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+}
+
+.hero p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+}
+.field-row .field {
+  flex: 1;
+}
+
+.field-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+
+.url-input,
+select,
+input[type='number'] {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px 12px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.url-input {
+  width: 100%;
+}
+
+.url-input:focus,
+select:focus,
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.chip:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+.chip-active {
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.custom-viewport-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+.custom-viewport-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--muted);
+  flex: 1;
+}
+.custom-viewport-row input {
+  width: 100%;
+}
+
+.capture-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #05070d;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  margin-top: 4px;
+}
+.capture-btn:hover {
+  opacity: 0.9;
+}
+.capture-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.preview-section {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.preview-section h2 {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.preview-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background: var(--card);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.preview-frame {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: auto;
+  max-height: 480px;
+  display: flex;
+  justify-content: center;
+}
+.preview-frame img {
+  max-width: 100%;
+  display: block;
+}
+
+.preview-meta {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 10px 0 14px;
+}
+
+.btn {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn:hover {
+  border-color: var(--accent);
+}
+.btn.primary {
+  background: var(--accent);
+  color: #05070d;
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.btn.primary:hover {
+  opacity: 0.9;
+}
+
+.error-box {
+  background: var(--danger-dim);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 10px;
+  padding: 16px;
+}
+.error-box p {
+  margin: 0 0 12px;
+  color: var(--danger);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .field-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .custom-viewport-row {
+    flex-direction: column;
+  }
+}

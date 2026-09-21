@@ -1,0 +1,2 @@
+RENDERER_URL=http://localhost:3001
+RENDERER_SECRET=change-me-to-a-long-random-string
