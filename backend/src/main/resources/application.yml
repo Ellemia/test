@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: moodfood-backend
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:moodfood}
+    username: ${DB_USER:moodfood}
+    password: ${DB_PASSWORD:moodfood_dev_pw}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: ${PORT:8090}
+
+moodfood:
+  cors:
+    allowed-origins: ${MOODFOOD_ALLOWED_ORIGIN:http://localhost:5174}
+  collector:
+    themealdb:
+      base-url: ${THEMEALDB_BASE_URL:https://www.themealdb.com/api/json/v1/1}
